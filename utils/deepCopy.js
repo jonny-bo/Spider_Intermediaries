@@ -3,7 +3,7 @@ function deepCopy(obj) {
   let newobj = obj.constructor === Array ? [] : {};
   if (typeof obj !== 'object') {
     throw new Error('你所拷贝的不是一个对象');
-  } else if (window.JSON) {
+  } else if (global.JSON) {
     str = JSON.stringify(obj);
     newobj = JSON.parse(str);
   } else {
