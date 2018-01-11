@@ -13,12 +13,12 @@ const hzArea = [
 const baseUrl = 'https://hz.zu.anjuke.com/fangyuan/{$name}/p{$page}-px3/';
 
 const targetConfig = {
-  transaction_form: 'loan',
+  baseItem: '#list-content>.zu-itemmod',
   data: {
-    description: '#list-content>.zu-itemmod>.zu-info>h3>a',
-    house_information: '#list-content>.zu-itemmod>.zu-info>p',
-    house_address: '#list-content>.zu-itemmod>.zu-info>address.details-item',
-    price: '#list-content>.zu-itemmod>.zu-side>p>strong',
+    description: '.zu-info>h3>a',
+    house_information: '.zu-info>p',
+    house_address: '.zu-info>address.details-item',
+    price: '.zu-side>p>strong',
   },
 };
 

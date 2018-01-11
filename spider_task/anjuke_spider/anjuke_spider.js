@@ -1,15 +1,11 @@
 const puppeteer = require('puppeteer');
 const puppeteerConfig = require('../../puppeteer_config');
 
-const deepCopy = require('../../utils/deepCopy');
+const anjukeHandle = require('../../spider_handle/anjuke_handle/anjuke_handle');
 
 // const MAX_PAGE = 50;
 
 const { area, templateUrl, targetObj } = require('../../spider_config/anjuke_zufang/anjuke');
-
-function search() {
-  
-}
 
 async function spider(targetUrl) {
   const browser = await puppeteer.launch(puppeteerConfig);
@@ -18,7 +14,8 @@ async function spider(targetUrl) {
 
   await page.goto(targetUrl);
 
-  search(page, targetObj);
+  const data = await anjukeHandle(page, targetObj);
+  console.log(data, '房源');
 
   await page.waitFor(3000);
 
