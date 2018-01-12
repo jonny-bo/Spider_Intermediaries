@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
 const puppeteerConfig = require('../../puppeteer_config');
 
-const anjukeHandle = require('../../spider_handle/anjuke_handle/anjuke_handle');
+const anjukeHandle = require('../../handle/anjuke_handle/anjuke_handle');
+const anjukeFilter = require('../../filter/anjuke_filter/anjuke_filter');
 
 // const MAX_PAGE = 50;
 
@@ -15,7 +16,8 @@ async function spider(targetUrl) {
   await page.goto(targetUrl);
 
   const data = await anjukeHandle(page, targetObj);
-  console.log(data, '房源');
+
+  const cleanData = anjukeFilter(data);
 
   await page.waitFor(3000);
 
@@ -34,4 +36,4 @@ async function pageLoop() {
   }
 }
 
-pageLoop();
+module.exports = pageLoop;
