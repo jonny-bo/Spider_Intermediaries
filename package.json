@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "ioredis": "^3.2.2",
+    "mongoose": "^4.13.9",
     "puppeteer": "^0.13.0"
   },
   "devDependencies": {

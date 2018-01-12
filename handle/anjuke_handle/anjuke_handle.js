@@ -1,5 +1,3 @@
-// const deepCopy = require('../../utils/deepCopy');
-
 async function anjukeHandle(page, option) {
   const pageData = await page.evaluate((opt) => {
     const itemSelector = opt.baseItem.toString();
