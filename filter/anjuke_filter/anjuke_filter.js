@@ -5,7 +5,7 @@ function filter(dirtyData) {
   for (let i = 0; i < loopLength; i += 1) {
     const { description, price } = dirtyData[i];
     const housingInformation = dirtyData[i].house_information.split('|');
-    const addressInformation = dirtyData[i].house_address.split(/.\s{2}./);
+    const addressInformation = dirtyData[i].house_address.split(/\s{3}/);
     const housingType = housingInformation[0];
     const housingArea = housingInformation[1];
     const community = addressInformation[0];
